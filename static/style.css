@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: beige;
+    color: black;
+}
+
+header {
+    background-color: sienna;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+#accueil {
+    padding: 100px 50px;
+    background-color: beige;
+}
+
+.accueil-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.accueil-texte {
+    flex: 1;
+}
+
+.accueil-texte h2 {
+    font-size: 48px;
+    color: sienna;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.accueil-texte p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.accueil-image {
+    flex: 1;
+    text-align: center;
+}
+
+.accueil-image img {
+    width: 100%;
+    max-width: 500px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#menu {
+   padding: 70px 50px;
+    text-align: center;
+    background-color: #fff8f0;
+}
+
+#menu h2 {
+    font-size: 40px;
+    color: brown;
+    margin-bottom: 40px;
+}
+
+.menu-cartes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.carte {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.carte img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carte h3 {
+    color: brown;
+    font-size: 24px;
+    margin: 15px 0 10px;
+}
+
+.carte p {
+    line-height: 1.5;
+}
+
+/* Prix */
+.carte .Prix {
+    font-weight: bold;
+    color: orange;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.carte:hover {
+    transform: translateY(-8px);
+}
+
+#menu img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+button {
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
+
+    #accueil {
+        padding: 50px 20px;
+    }
+
+    .accueil-contenu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .accueil-texte h2 {
+        font-size: 32px;
+    }
+
+    .accueil-image img {
+        height: 250px;
+    }
+
+    #menu {
+        padding: 50px 20px;
+    }
+
+    .menu-cartes {
+        grid-template-columns: 1fr;
+    }
+}
+
+#apropos {
+    padding: 80px 50px;
+    background-color: white;
+}
+
+.apropos-contenu {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.apropos-texte {
+    flex: 1;
+}
+
+.apropos-texte h2 {
+    font-size: 40px;
+    color: sienna;
+    margin-bottom: 25px;
+}
+
+.apropos-texte p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.apropos-image {
+    flex: 1;
+}
+
+.apropos-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#galerie {
+    padding: 70px 50px;
+    text-align: center;
+    background-color: beige;
+}
+
+#galerie h2 {
+    font-size: 40px;
+    color: sienna;
+    margin-bottom: 15px;
+}
+
+#galerie > p {
+    margin-bottom: 40px;
+    font-size: 17px;
+}
+
+/* Grille des images */
+.galerie-images {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.galerie-images img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+/* Effet au passage de la souris */
+.galerie-images img:hover {
+    transform: scale(1.05);
+}
+
+#contact {
+     padding: 80px 50px;
+    text-align: center;
+    background-color: white;
+}
+
+#contact h2 {
+    font-size: 40px;
+    color: sienna;
+    margin-bottom: 15px;
+}
+
+#contact > p {
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+.contact-contenu {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 60px;
+    text-align: left;
+}
+
+.contact-infos {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12)
+}
+
+.contact-infos h3 {
+    color: sienna;
+     font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.contact-infos p {
+    margin-bottom: 18px;
+}
+
+.contact-infos a {
+    color: sienna;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-infos a:hover {
+    color: chocolate;
+}
+
+footer {
+    background-color: sienna;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin: 8px;
+}
+h2 {
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a {
+    transition: color 0.3s;
+}
+
+.texte-defilant {
+    overflow: hidden;
+    width: 100%;
+}
+
+.texte-defilant p {
+    white-space: nowrap;
+    animation: defilement 12s linear infinite;
+}
+
+@keyframes defilement {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
