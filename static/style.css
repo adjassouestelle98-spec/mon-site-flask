@@ -361,18 +361,4 @@ nav a {
     width: 100%;
 }
 
-.texte-defilant p {
-    white-space: nowrap;
-    animation: defilement 12s linear infinite;
-}
-
-@keyframes defilement {
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
 

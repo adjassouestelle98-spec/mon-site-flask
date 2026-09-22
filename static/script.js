@@ -46,4 +46,20 @@ Merci !`;
         window.open(url, "_blank");
     });
 
-});
+});const texte = document.querySelector(".texte-defilant p");
+
+let position = 0;
+
+function defiler() {
+    position -= 0.5; // plus petit = plus lent
+
+    texte.style.transform = `translateX(${position}px)`;
+
+    if (position < -texte.offsetWidth) {
+        position = texte.parentElement.offsetWidth;
+    }
+
+    requestAnimationFrame(defiler);
+}
+
+defiler();
