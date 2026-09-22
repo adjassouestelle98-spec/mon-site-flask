@@ -309,6 +309,10 @@ button:hover {
     border-radius: 0;
     box-shadow: none;
 }
+#contact h2 {
+    font-size: 30px;
+    white-space: nowrap;
+}
 
 .contact-infos h3 {
     color: sienna;
