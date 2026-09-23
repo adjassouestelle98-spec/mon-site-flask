@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/acceuil/")
+@app.route("/")
 def acceuil():
     return render_template('index.html')
 
