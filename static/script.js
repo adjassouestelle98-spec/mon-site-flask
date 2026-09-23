@@ -109,7 +109,7 @@ if (boutonWhatsApp) {
             " FCFA\n\n" +
             "Merci !";
 
-        const numero = "22896215755";
+        const numero = "22891212513";
 
         const url =
             "https://wa.me/" +
