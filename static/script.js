@@ -1,65 +1,122 @@
-let panier = [];
-const panierContenu = document.querySelector("#panier-contenu");
-const panierTotal = document.querySelector("#panier-total");
-const boutonWhatsapp = document.querySelector("#bouton-whatsapp");
-const boutonMenu = document.querySelector("#bouton-menu");
+let commande = [];
 
-boutonMenu.addEventListener("click", function() {
-    document.querySelector("#menu").scrollIntoView({
-        behavior: "smooth"
+// Ajouter un plat à la commande
+function commander(nomPlat, prix, idQuantite) {
+
+    const quantite = parseInt(
+        document.getElementById(idQuantite).value
+    );
+
+    // Vérifier la quantité
+    if (isNaN(quantite) || quantite < 1) {
+        alert("Veuillez choisir une quantité valide.");
+        return;
+    }
+
+    // Vérifier si le plat est déjà dans la commande
+    const platExistant = commande.find(
+        plat => plat.nom === nomPlat
+    );
+
+    if (platExistant) {
+    platExistant.quantite = quantite;
+}   else {
+        commande.push({
+            nom: nomPlat,
+            prix: prix,
+            quantite: quantite
+        });
+    }
+
+    afficherResume();
+}
+
+
+// Afficher un petit résumé de la commande
+function afficherResume() {
+
+    const liste = document.getElementById("liste-commande");
+    const resume = document.getElementById("resume-commande");
+
+    if (commande.length === 0) {
+        liste.innerHTML = "<p>Aucun plat sélectionné.</p>";
+        resume.textContent = "Aucun plat sélectionné.";
+        return;
+    }
+
+    let total = 0;
+    let contenu = "";
+
+    commande.forEach(function(plat,index) {
+
+        const totalPlat = plat.prix * plat.quantite;
+        total += totalPlat;
+
+        contenu +=
+            "<p>" +
+            plat.nom +
+            " × " +
+            plat.quantite +
+            " — " +
+            totalPlat +
+            " FCFA" +
+            "</p>";
     });
-});
 
-const boutonsCommande = document.querySelectorAll(".bouton-commande");
+    liste.innerHTML = contenu;
 
-boutonsCommande.forEach(function(bouton) {
+    resume.textContent =
+        "Total de la commande : " +
+        total +
+        " FCFA";
+}
 
-    bouton.addEventListener("click", function() {
+// Bouton WhatsApp
+const boutonWhatsApp =
+    document.getElementById("envoyer-whatsapp");
 
-        const plat = bouton.dataset.plat;
-        const prix = bouton.dataset.prix;
+if (boutonWhatsApp) {
 
-        const quantite = prompt("Combien de portions souhaitez-vous commander ?");
+    boutonWhatsApp.addEventListener("click", function() {
 
-        if (quantite === null) {
+        if (commande.length === 0) {
+            alert("Veuillez ajouter au moins un plat.");
             return;
         }
 
-        if (quantite <= 0 || isNaN(quantite)) {
-            alert("Veuillez entrer une quantité valide.");
-            return;
-        }
+        let message =
+            "Bonjour, je souhaite passer une commande.\n\n";
 
-        const message = `Bonjour Les Délices de Tata Zita 
+        let totalGeneral = 0;
 
-Je souhaite commander :
- le Plat de ${plat}\n
-dont le Prix unitaire est ${prix}\n
- Nombre Plats: ${quantite}\n
+        commande.forEach(function(plat) {
 
-Merci !`;
+            const totalPlat =
+                plat.prix * plat.quantite;
 
-        const numero = "22896215557";
+            totalGeneral += totalPlat;
 
-        const url = `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+            message +=
+                "Plat : " + plat.nom + "\n" +
+                "Quantité : " + plat.quantite + "\n" +
+                "Prix unitaire : " + plat.prix + " FCFA\n" +
+                "Total : " + totalPlat + " FCFA\n\n";
+        });
+
+        message +=
+            "TOTAL DE LA COMMANDE : " +
+            totalGeneral +
+            " FCFA\n\n" +
+            "Merci !";
+
+        const numero = "22896215755";
+
+        const url =
+            "https://wa.me/" +
+            numero +
+            "?text=" +
+            encodeURIComponent(message);
 
         window.open(url, "_blank");
     });
-
-});const texte = document.querySelector(".texte-defilant p");
-
-let position = 0;
-
-function defiler() {
-    position -= 0.5; // plus petit = plus lent
-
-    texte.style.transform = `translateX(${position}px)`;
-
-    if (position < -texte.offsetWidth) {
-        position = texte.parentElement.offsetWidth;
-    }
-
-    requestAnimationFrame(defiler);
 }
-
-defiler();

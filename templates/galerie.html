@@ -1,0 +1,63 @@
+!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Galerie - ZO-FOOD</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>ZO-FOOD</h1>
+
+        <nav>
+            <a href="{{ url_for('acceuil') }}">Accueil</a>
+            <a href="{{ url_for('apropos') }}">À propos</a>
+            <a href="{{ url_for('menu') }}">Menu</a>
+            <a href="{{ url_for('galerie') }}">Galerie</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-galerie">
+
+            <h2>Notre Galerie</h2>
+
+            <p>Découvrez quelques images des plats de ZO-FOOD.</p>
+
+            <div class="galerie-images">
+
+                <img src="{{ url_for('static', filename='images/akpan.jpg') }}" alt="Akpan">
+
+                <img src="{{ url_for('static', filename='images/attièkè Poulet.jpg') }}" alt="Attiékè poulet">
+
+                <img src="{{ url_for('static', filename='images/ris.webp') }}" alt="Riz">
+
+                <img src="{{ url_for('static', filename='images/spaghetti.jpg') }}" alt="Spaghetti">
+
+                <img src="{{ url_for('static', filename='images/salade.jpg') }}" alt="Salade">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 ZO-FOOD</p>
+        <p>Téléphone : +228 96 21 55 57</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

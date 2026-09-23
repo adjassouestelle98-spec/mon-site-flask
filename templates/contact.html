@@ -8,12 +8,11 @@
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
 
-    <title>ZO-FOOD</title>
+    <title>Contact - ZO-FOOD</title>
 </head>
 
 <body>
 
-    <!-- En-tête -->
     <header>
         <h1>ZO-FOOD</h1>
 
@@ -26,41 +25,42 @@
         </nav>
     </header>
 
-
-    <!-- Accueil -->
     <main>
 
-        <section id="acceuil">
+        <section class="page-contact">
 
-            <div class="acceuil-contenu">
+            <h2>Contactez-nous</h2>
 
-                <h1>BIENVENUE CHEZ</h1>
+            <p>
+                Une question ou une commande ?
+                Nous sommes à votre disposition.
+            </p>
 
-                <h2>ZO-FOOD</h2>
+            <h3>Nos coordonnées</h3>
 
-                <p class="slogan">
-                    Le goût du fait maison qui raconte une histoire.
-                </p>
-
-                <p class="description">
-                    Des saveurs authentiques, des plats préparés avec
-                    passion et ce petit goût unique qui donne envie de revenir.
-                </p>
-
-                <a href="{{ url_for('menu') }}" class="bouton-acceuil">
-                    Découvrir le menu
+            <p>
+                 Téléphone :
+                <a href="tel:+22896215557">
+                    +228 96 21 55 57
                 </a>
+            </p>
 
-            </div>
+            <p>
+                 WhatsApp :
+                <a href="https://wa.me/22896215557">
+                    +228 96 21 55 57
+                </a>
+            </p>
+
+            <p>
+                 Lomé, Togo
+            </p>
 
         </section>
 
     </main>
 
-
-    <!-- Pied de page -->
     <footer>
-
         <p>© 2026 ZO-FOOD</p>
 
         <p>
@@ -69,12 +69,9 @@
                 +228 96 21 55 57
             </a>
         </p>
-
     </footer>
-
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
-
 </html>

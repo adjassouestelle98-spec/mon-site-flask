@@ -2,9 +2,28 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
-def accueil():
+@app.route("/acceuil/")
+def acceuil():
     return render_template('index.html')
 
+@app.route("/apropos/")
+def apropos():
+    return render_template("apropos.html")
+
+
+@app.route("/menu/")
+def menu():
+    return render_template("menu.html")
+
+
+@app.route("/galerie/")
+def galerie():
+    return render_template("galerie.html")
+
+
+@app.route("/contact/")
+def contact():
+    return render_template("contact.html")
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True) 

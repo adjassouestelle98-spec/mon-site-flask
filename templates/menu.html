@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body> <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>Mon Restaurant</h1>
+        </div>
+        <nav> <a href="/acceuil">Accueil</a> 
+            <a href="/menu">Menu</a> 
+            <a href="/apropos">À propos</a> 
+        </nav>
+    </header> <!-- Présentation du menu -->
+    <section class="menu-intro">
+        <h2>Notre Menu</h2>
+        <p> Découvrez nos plats et choisissez ce qui vous donne envie. </p>
+    </section> <!-- Plats -->
+    <main class="menu-container"> <!-- Poulet braisé -->
+        <article class="plat-card"> <img src="{{ url_for('static', filename='images/poulet Frit.avif') }}"
+                alt="Poulet braisé" class="plat-image">
+            <div class="plat-info">
+                <h3>Poulet braisé</h3>
+                <p> Poulet braisé accompagné de frites. </p>
+                <p class="prix"> 3000 FCFA </p> <label for="poulet"> Quantité : </label> <input type="number"
+                    id="poulet" min="1" value="1"> <button onclick="commander('Poulet braisé', 3000, 'poulet')">
+                    Commander </button>
+            </div>
+        </article> <!-- Spaghetti -->
+        <article class="plat-card"> <img src="{{ url_for('static', filename='images/spaghetti.jpg') }}" alt="Spaghetti"
+                class="plat-image">
+            <div class="plat-info">
+                <h3>Spaghetti</h3>
+                <p> Spaghetti avec une sauce savoureuse. </p>
+                <p class="prix"> 2000 FCFA </p> <label for="spaghetti"> Quantité : </label> <input type="number"
+                    id="spaghetti" min="1" value="1"> <button onclick="commander('Spaghetti', 2000, 'spaghetti')">
+                    Commander </button>
+            </div>
+        </article> <!-- Poisson grillé -->
+        <article class="plat-card"> <img src="{{ url_for('static', filename='images/poisson-grille-facon.jpg') }}"
+                alt="Poisson grillé" class="plat-image">
+            <div class="plat-info">
+                <h3>Poisson grillé</h3>
+                <p> Poisson grillé accompagné de riz et de légumes. </p>
+                <p class="prix"> 2500 FCFA </p> <label for="poisson"> Quantité : </label> <input type="number"
+                    id="poisson" min="1" value="1"> <button onclick="commander('Poisson grillé', 2500, 'poisson')">
+                    Commander </button>
+            </div>
+        </article> <!-- Riz au poulet -->
+        <article class="plat-card"> <img src="{{ url_for('static', filename='images/RizPoulet.jpg') }}"
+                alt="Riz au poulet" class="plat-image">
+            <div class="plat-info">
+                <h3>Riz au poulet</h3>
+                <p> Riz accompagné de poulet et de légumes. </p>
+                <p class="prix"> 2500 FCFA </p> <label for="riz-poulet"> Quantité : </label> <input type="number"
+                    id="riz-poulet" min="1" value="1"> <button onclick="commander('Riz au poulet', 2500, 'riz-poulet')">
+                    Commander </button>
+            </div>
+        </article> <!-- Riz au poisson -->
+        <article class="plat-card"> <img src="{{ url_for('static', filename='images/riz Poisson.jpg') }}"
+                alt="Riz au poisson" class="plat-image">
+            <div class="plat-info">
+                <h3>Riz au poisson</h3>
+                <p> Riz accompagné de poisson et de légumes. </p>
+                <p class="prix"> 2500 FCFA </p> <label for="riz-poisson"> Quantité : </label> <input type="number"
+                    id="riz-poisson" min="1" value="1"> <button
+                    onclick="commander('Riz au poisson', 2500, 'riz-poisson')"> Commander </button>
+            </div>
+        </article> <!-- Ablo poisson -->
+        <article class="plat-card"> <img src="{{ url_for('static', filename='images/Ablo Poisson.jpg') }}"
+                alt="Ablo poisson" class="plat-image">
+            <div class="plat-info">
+                <h3>Ablo poisson</h3>
+                <p> Ablo accompagné de poisson et de légumes. </p>
+                <p class="prix"> 2500 FCFA </p> <label for="ablo-poisson"> Quantité : </label> <input type="number"
+                    id="ablo-poisson" min="1" value="1"> <button
+                    onclick="commander('Ablo poisson', 2500, 'ablo-poisson')"> Commander </button>
+            </div>
+        </article>
+    </main>
+   <div class="commande-actions">
+
+    <h2>Ma commande</h2>
+
+    <div id="liste-commande">
+        <p>Aucun plat sélectionné.</p>
+    </div>
+
+    <p id="resume-commande">
+        Aucun plat sélectionné.
+    </p>
+    
+    <button id="envoyer-whatsapp" type="button">
+        Envoyer ma commande sur WhatsApp
+    </button>
+
+</div>
+ <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

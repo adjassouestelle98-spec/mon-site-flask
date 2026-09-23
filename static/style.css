@@ -4,20 +4,25 @@
     box-sizing: border-box;
 }
 
-/* Corps de la page */
+/* ========================= CORPS DE LA PAGE ========================= */
 body {
     font-family: Arial, sans-serif;
-    background-color: beige;
-    color: black;
-}
 
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35)),
+        url("/static/images/arrierePlan.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: black;
+    min-height: 100vh;
+}
+/* ========================= HEADER / NAVIGATION ========================= */
 header {
-    background-color: sienna;
-    color: white;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: transparent;
 }
 
 nav a {
@@ -25,62 +30,83 @@ nav a {
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: gold;
 }
 
-#accueil {
-    padding: 100px 50px;
-    background-color: beige;
-}
-
-.accueil-contenu {
+/* ========================= PAGE ACCUEIL ========================= */
+#acceuil {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 70px;
-    max-width: 1100px;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.acceuil-contenu {
+    max-width: 900px;
     margin: auto;
 }
 
-.accueil-texte {
-    flex: 1;
+.acceuil-contenu h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
 }
 
-.accueil-texte h2 {
-    font-size: 48px;
-    color: sienna;
-    line-height: 1.2;
-    margin-bottom: 25px;
+.acceuil-contenu h2 {
+    font-size: 80px;
+    color: #f5b82e;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-.accueil-texte p {
+.slogan {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.description {
     font-size: 19px;
     line-height: 1.6;
-    margin-bottom: 30px;
+    max-width: 750px;
+    margin: auto;
 }
 
-.accueil-image {
-    flex: 1;
-    text-align: center;
+.signature {
+    font-size: 22px;
+    font-style: italic;
+    margin: 30px 0;
+    color: #f5b82e;
 }
 
-.accueil-image img {
-    width: 100%;
-    max-width: 500px;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.bouton-acceuil {
+    display: inline-block;
+    background-color: #f5b82e;
+    color: black;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
+.bouton-acceuil:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/* ========================= ANCIEN MENU ========================= */
 #menu {
-   padding: 70px 50px;
-    text-align: center;
-    background-color: #fff8f0;
+    background-color: transparent;
 }
+
 
 #menu h2 {
     font-size: 40px;
@@ -121,7 +147,6 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* Prix */
 .carte .Prix {
     font-weight: bold;
     color: orange;
@@ -133,13 +158,7 @@ nav a:hover {
     transform: translateY(-8px);
 }
 
-#menu img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
+/* ========================= BOUTONS ========================= */
 button {
     background-color: brown;
     color: white;
@@ -154,51 +173,7 @@ button:hover {
     background-color: orange;
 }
 
-@media (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    nav a {
-        margin-left: 0;
-    }
-
-    #accueil {
-        padding: 50px 20px;
-    }
-
-    .accueil-contenu {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .accueil-texte h2 {
-        font-size: 32px;
-    }
-
-    .accueil-image img {
-        height: 250px;
-    }
-
-    #menu {
-        padding: 50px 20px;
-    }
-
-    .menu-cartes {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* ========================= PAGE À PROPOS ========================= */
 #apropos {
     padding: 80px 50px;
     background-color: white;
@@ -239,6 +214,7 @@ button:hover {
     border-radius: 20px;
 }
 
+/* ========================= GALERIE ========================= */
 #galerie {
     padding: 70px 50px;
     text-align: center;
@@ -251,12 +227,11 @@ button:hover {
     margin-bottom: 15px;
 }
 
-#galerie > p {
+#galerie>p {
     margin-bottom: 40px;
     font-size: 17px;
 }
 
-/* Grille des images */
 .galerie-images {
     max-width: 1100px;
     margin: auto;
@@ -273,13 +248,13 @@ button:hover {
     transition: transform 0.3s;
 }
 
-/* Effet au passage de la souris */
 .galerie-images img:hover {
     transform: scale(1.05);
 }
 
+/* ========================= CONTACT ========================= */
 #contact {
-     padding: 80px 50px;
+    padding: 80px 50px;
     text-align: center;
 }
 
@@ -289,7 +264,7 @@ button:hover {
     margin-bottom: 15px;
 }
 
-#contact > p {
+#contact>p {
     font-size: 17px;
     margin-bottom: 40px;
 }
@@ -302,21 +277,17 @@ button:hover {
     text-align: left;
 }
 
-    .contact-infos {
+.contact-infos {
     flex: 1;
     background-color: transparent;
     padding: 0;
     border-radius: 0;
     box-shadow: none;
 }
-#contact h2 {
-    font-size: 30px;
-    white-space: nowrap;
-}
 
 .contact-infos h3 {
     color: sienna;
-     font-size: 24px;
+    font-size: 24px;
     margin-bottom: 25px;
 }
 
@@ -334,16 +305,20 @@ button:hover {
     color: chocolate;
 }
 
+/* ========================= FOOTER ========================= */
 footer {
-    background-color: sienna;
-    color: white;
-    text-align: center;
-    padding: 25px;
+    background-color: transparent;
 }
 
 footer p {
     margin: 8px;
 }
+
+header,
+footer {
+    background-color: transparent;
+}
+/* ========================= TITRES ========================= */
 h2 {
     text-align: center;
 }
@@ -352,13 +327,468 @@ html {
     scroll-behavior: smooth;
 }
 
-nav a {
-    transition: color 0.3s;
-}
-
+/* ========================= TEXTE DÉFILANT ========================= */
 .texte-defilant {
     overflow: hidden;
     width: 100%;
 }
 
+/* ========================= PAGE MENU ========================= */
+.menu-intro {
+    background-color: transparent;
+}
 
+.menu-intro h2 {
+    font-size: 40px;
+    color: sienna;
+    margin-bottom: 15px;
+}
+
+.menu-intro p {
+    font-size: 20px;
+    color: solid black;
+}
+
+/* Conteneur des plats */
+.menu-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Carte d'un plat */
+.plat-card {
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+}
+
+/* Image du plat */
+.plat-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Informations du plat */
+.plat-info {
+    padding: 20px;
+}
+
+.plat-info h3 {
+    color: sienna;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.plat-info p {
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Prix */
+.prix {
+    color: chocolate;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Quantité */
+.plat-info label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.plat-info input {
+    width: 70px;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Bouton */
+.plat-info button {
+    display: block;
+    margin-top: 15px;
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
+
+    /* Accueil sur téléphone */
+    #acceuil {
+        min-height: 90vh;
+        padding: 80px 20px;
+    }
+
+    .acceuil-contenu h1 {
+        font-size: 28px;
+    }
+
+    .acceuil-contenu h2 {
+        font-size: 50px;
+    }
+
+    .slogan {
+        font-size: 21px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .signature {
+        font-size: 18px;
+    }
+
+    /* Ancien menu */
+    #menu {
+        padding: 50px 20px;
+    }
+
+    .menu-cartes {
+        grid-template-columns: 1fr;
+    }
+
+    /* Menu actuel */
+    .menu-container {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .menu-intro {
+        padding: 40px 20px 30px;
+    }
+
+    .menu-intro h2 {
+        font-size: 32px;
+    }
+
+    .plat-image {
+        height: 220px;
+    }
+
+    /* À propos */
+    .apropos-contenu {
+        flex-direction: column;
+    }
+
+    /* Galerie */
+    .galerie-images {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact */
+    .contact-contenu {
+        flex-direction: column;
+    }
+
+    #contact h2 {
+        font-size: 30px;
+        white-space: nowrap;
+    }
+}
+
+.commande-actions {
+   max-width: 700px;
+    margin: 40px auto 60px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.commande-actions h2 {
+    color: sienna;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+#liste-commande {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#liste-commande p {
+    background-color: #fff8f0;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+#resume-commande {
+    font-size: 20px;
+    font-weight: bold;
+    color: chocolate;
+    margin: 20px 0;
+}
+
+#envoyer-whatsapp {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #25D366;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+#envoyer-whatsapp:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+.page-apropos {
+    min-height: 75vh;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.apropos-texte {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.apropos-texte h2 {
+    color: sienna;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.apropos-texte p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.apropos-image {
+    flex: 1;
+    text-align: center;
+}
+
+.apropos-image img {
+    width: 100%;
+    max-width: 450px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+
+    .page-apropos {
+        flex-direction: column;
+        padding: 50px 20px;
+        gap: 30px;
+    }
+
+    .apropos-texte {
+        padding: 25px;
+    }
+
+    .apropos-texte h2 {
+        font-size: 28px;
+    }
+
+    .apropos-image img {
+        height: 300px;
+    }
+
+    header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+}
+
+header {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    gap: 25px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* Pied de page transparent */
+footer {
+    background-color: transparent;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.page-galerie {
+    min-height: 75vh;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.page-galerie h2 {
+    color: white;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.page-galerie > p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.galerie-images {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.galerie-images img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+    transition: transform 0.3s;
+}
+
+.galerie-images img:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+
+    .galerie-images {
+        grid-template-columns: 1fr;
+    }
+
+    .galerie-images img {
+        height: 250px;
+    }
+}
+
+.page-contact {
+    min-height: 75vh;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.page-contact h2 {
+    color: white;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.page-contact > p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+
+.page-contact h3 {
+    color: white;
+    font-size: 25px;
+    margin: 30px 0 20px;
+}
+
+.page-contact p {
+    color: white;
+    font-size: 18px;
+    margin: 18px 0;
+}
+
+.page-contact a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.page-contact a:hover {
+    text-decoration: underline;
+}
