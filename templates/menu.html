@@ -13,9 +13,9 @@
         <div class="logo">
             <h1>Mon Restaurant</h1>
         </div>
-        <nav> <a href="/acceuil">Accueil</a> 
-            <a href="/menu">Menu</a> 
-            <a href="/apropos">À propos</a> 
+        <nav> <a href="{{ url_for('acceuil') }}">Accueil</a>
+    <a href="{{ url_for('apropos') }}">À propos</a>
+    <a href="{{ url_for('menu') }}">Menu</a>
         </nav>
     </header> <!-- Présentation du menu -->
     <section class="menu-intro">
